@@ -14,14 +14,13 @@ public class Person {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")  // ИЗМЕНЕНО: должно совпадать с БД
     private String lastName;
 
     @Column(name = "age")
     private int age;
 
-    public Person() {
-    }
+    public Person() {}
 
     public Person(String name, String lastName, int age) {
         this.name = name;
@@ -29,6 +28,7 @@ public class Person {
         this.age = age;
     }
 
+    // геттеры и сеттеры
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 

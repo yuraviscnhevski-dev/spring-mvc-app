@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Все люди</title>
 </head>
 <body>
+<h2>Список людей</h2>
 
-<div th:each="person : ${people}">
-    <a th:href="@{/people/show(id=${person.id})}" th:text="${person.name}">user</a>
-</div>
-<br/>
-<hr/>
+<c:forEach var="person" items="${people}">
+    <a href="${pageContext.request.contextPath}/people/show?id=${person.id}">${person.name}</a>
+    <br/>
+</c:forEach>
 
-<a href="/people/new">Create new person</a>
+<a href="${pageContext.request.contextPath}/people/new">Create new person</a>
 </body>
 </html>

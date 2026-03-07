@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Человек</title>
 </head>
 <body>
-<p th:text="${person.name}">VALUE</p>
-<p th:text="${person.id}">VALUE</p>
+<h2>Информация о человеке</h2>
 
-<form th:method="POST" th:action="@{/people/delete(id=${person.id})}">
-    <input type="hidden" name="id" th:value="${person.id}" />
-    <input type="submit" value="Delete" onclick="return confirm('Удалить?')"/>
+<p>ID: ${person.id}</p>
+<p>Имя: ${person.name}</p>
+<p>Фамилия: ${person.lastName}</p>
+<p>Возраст: ${person.age}</p>
+
+<form action="${pageContext.request.contextPath}/people/delete" method="post">
+    <input type="hidden" name="id" value="${person.id}">
+    <input type="submit" value="Удалить" onclick="return confirm('Удалить?')">
 </form>
 
+<br/>
+<a href="${pageContext.request.contextPath}/people">Назад к списку</a>
 </body>
 </html>
