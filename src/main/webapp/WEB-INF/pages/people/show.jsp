@@ -11,12 +11,15 @@
 <p>Фамилия: ${person.lastName}</p>
 <p>Возраст: ${person.age}</p>
 
-<form action="${pageContext.request.contextPath}/people/delete" method="post">
+<!-- Кнопка редактирования -->
+<a href="${pageContext.request.contextPath}/people/edit?id=${person.id}" style="display:inline-block; padding:5px 10px; background:#007bff; color:white; text-decoration:none; border-radius:4px; margin-right:10px;">Редактировать</a>
+
+<form action="${pageContext.request.contextPath}/people/delete" method="post" style="display:inline;">
     <input type="hidden" name="id" value="${person.id}">
-    <input type="submit" value="Удалить" onclick="return confirm('Удалить?')">
+    <input type="submit" value="Удалить" onclick="return confirm('Удалить?')" style="padding:5px 10px; background:#dc3545; color:white; border:none; border-radius:4px; cursor:pointer;">
 </form>
 
-<br/>
+<br/><br/>
 <a href="${pageContext.request.contextPath}/people">Назад к списку</a>
 </body>
 </html>

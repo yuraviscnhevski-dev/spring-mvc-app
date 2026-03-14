@@ -8,7 +8,6 @@ import ru.yurajavadev.springmvcapp.models.Person;
 import java.util.List;
 
 @Repository
-@Transactional
 public class PersonDAO implements PersonDAOInterface {
 
     @PersistenceContext

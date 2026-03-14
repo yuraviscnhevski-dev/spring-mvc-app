@@ -41,9 +41,9 @@ public class PersonService implements PersonServiceInterface {
     @Transactional
     public void updatePerson(int id, Person updatedPerson) {
 
-        if (updatedPerson.getName() == null || updatedPerson.getName().trim().isEmpty()) {
-            throw new IllegalArgumentException("Name cannot be empty");
-        }
+        //  if (updatedPerson.getName() == null || updatedPerson.getName().trim().isEmpty()) {
+          //  throw new IllegalArgumentException("Name cannot be empty");
+      //  }
         personDAO.update(id, updatedPerson);
     }
 
